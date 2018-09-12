@@ -55,6 +55,7 @@ int main()
     // ------------------------------------
     Shader ourShader("6.1.coordinate_systems.vs", "6.1.coordinate_systems.fs");
 
+
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
     float vertices[] = {
@@ -204,10 +205,11 @@ int main()
         glm::mat4 view;
         glm::mat4 projection;
         //旋转，后面的glm::VEC3的值就是绕x轴旋转55度
-        model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        //在这里我们不需要绕x
+        model = glm::rotate(model, glm::radians(-50.0f), glm::vec3(0.0f, -1.0f, 0.0f));
         view  = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
         //投影矩阵
-        projection = glm::perspective(glm::radians(45.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+        projection = glm::perspective(glm::radians(30.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
         // retrieve the matrix uniform locations
         unsigned int modelLoc = glGetUniformLocation(ourShader.ID, "model");
         unsigned int viewLoc  = glGetUniformLocation(ourShader.ID, "view");
