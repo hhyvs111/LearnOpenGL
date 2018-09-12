@@ -173,6 +173,7 @@ int main()
         glBindTexture(GL_TEXTURE_2D, texture2);
 
         // set the texture mix value in the shader
+        //设置纹理清晰度
         ourShader.setFloat("mixValue", mixValue);
 
         // render container
