@@ -76,9 +76,12 @@ int main()
     // build and compile our shader zprogram
     // ------------------------------------
     Shader ourShader("7.4.camera.vs", "7.4.camera.fs");
+    //看下怎么单独应用这个shader
+    Shader ourShader_other("7.4.camera1.vs", "7.4.camera1.fs");
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
+    //六个面的坐标值
     float vertices[] = {
         -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
          0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
@@ -123,6 +126,7 @@ int main()
         -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
     };
     // world space positions of our cubes
+    //正方体的位置
     glm::vec3 cubePositions[] = {
         glm::vec3( 0.0f,  0.0f,  0.0f),
         glm::vec3( 2.0f,  5.0f, -15.0f),
